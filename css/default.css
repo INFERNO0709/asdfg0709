@@ -402,37 +402,23 @@ span > select {
   color: rgb(0, 182, 240);
 }
 
-.dark-theme a {
-  color: #a0a0a0;
-  text-decoration: none;
-}
+ .dark-theme{
+        background-color: #111;
+        color: #ddd;
+      }
 
-body.dark-theme {
-  background-color: rgba(35, 35, 35, 1);
-  color: #f0f0f0;
-}
+      .dark input,
+      .dark textarea,
+      .dark button,
+      .dark select {
+        background-color: #111;
+        color: #ddd;
+        border: #ddd 1px solid;
+      }
 
-.dark-theme .pure-form legend {
-  color: #f0f0f0;
-}
-
-.dark-theme .pure-menu-heading {
-  color: #f0f0f0;
-}
-
-.dark-theme input,
-.dark-theme select,
-.dark-theme textarea {
-  color: rgba(35, 35, 35, 1);
-}
-
-.dark-theme .pure-form input[type="file"] {
-  color: #f0f0f0;
-}
-
-.dark-theme .searchbar input {
-  background-color: inherit;
-  color: inherit;
+      .dark a {
+        color: cyan;
+      }
 }
 
 @media (prefers-color-scheme: dark) {
