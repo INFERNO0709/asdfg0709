@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>連番を簡単に生成！！</title>
+    <title>Easily generate sequential numbers! !</title>
 
     <style>
       .example4 {
@@ -46,20 +46,19 @@
     </style>
   </head>
   <body>
-    <button id="darkmodeBtn">ダークモードきりかえ</button>
-    <div class="example4"><h1>掲示板</h1></div>
-    新規さんへ、先ずは挨拶をしましょう。シード値は自分のidを決めるものでパスワードのようなものです。<br />今の話題に勇気を出して参加してみましょう！！！<br />
-    メッセージが送れない場合メッセージや名前が規制されている可能性があります。<br />
-    送信ボタンを押してから若干遅延があります<br />
-    <a href="/bbs/how">使い方</a><br />
+    <button id="darkmodeBtn">Dark mode change</button>
+    <div class="example4"><h1>Small Talk</h1></div>
+    First of all, let's say hello to the newcomers. The seed value determines your ID and is like a password.<br />Let's gather courage and participate in the current topic! ! !<br />
+    If you cannot send a message, your message or name may be restricted.<br />
+    <a href="/bbs/how">How to use</a><br />
 
     <form id="form">
       <select name="channel" id="channel">
-        <option value="main" selected>雑談</option>
-        <option value="battle">バトルスタジアム</option>
+        <option value="main" selected>Small Talk</option>
+        <option value="battle">Battle Stadium</option>
       </select>
       <br />
-      <label for="message">メッセージ</label>
+      <label for="message">message</label>
       <select name="command" id="command">
         <option value="" selected></option>
         <option value="/del">/del</option>
@@ -73,7 +72,9 @@
         <option value="/restrict">/restrict</option>
         <option value="/release">/release</option>
         <option value="/prohibit">/prohibit</option>
-        <option value="/test">/test</option>
+        <option value="/kill">/kill</option>
+        <option value="/ban">/ban</option>
+        <option value="test">test</option>
       </select>
       <textarea
         name="message"
@@ -84,7 +85,7 @@
         required
       ></textarea>
       <p></p>
-      <label for="name">名前</label>
+      <label for="name">name</label>
       <input
         type="text"
         id="name"
@@ -93,16 +94,16 @@
         maxlength="25"
         required
       />
-      <label for="seed">シード</label>
+      <label for="seed">seed</label>
       <input type="text" id="seed" name="seed" value="" required />
       <button id="submit">送信する</button>
       <br />
-      スピーカー以上のメッセージのみ表示<input
+     Display only messages for speakers and above<input
         type="checkbox"
         id="filter"
         name="verify"
       />
-      <h2>投稿</h2>
+      <h2>Post</h2>
     </form>
 
     <div id="messages"></div>
