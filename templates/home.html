@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Easily generate sequential numbers! !</title>
+    <title>連番を簡単に生成！！</title>
 
     <style>
       .example4 {
@@ -46,37 +47,21 @@
     </style>
   </head>
   <body>
-    <button id="darkmodeBtn"></button>
-    <div class="example4"><h1>Small Talk</h1></div>
-    First of all, let's say hello to the newcomers. The seed value determines your ID and is like a password.<br />Let's gather courage and participate in the current topic! ! !<br />
-    If you cannot send a message, your message or name may be restricted.<br />
-    <a href="/bbs/how">How to use</a><br />
+    <button id="darkmodeBtn">ダークモードきりかえ</button>
+    <div class="example4"><h1>掲示板</h1></div>
+    新規さんへ、先ずは挨拶をしましょう。シード値は自分のidを決めるものでパスワードのようなものです。<br />今の話題に勇気を出して参加してみましょう！！！<br />
+    メッセージが送れない場合メッセージや名前が規制されている可能性があります。<br />
+    <a href="/bbs/how">使い方</a><br />
 
     <form id="form">
       <select name="channel" id="channel">
-        <option value="main" selected>Small Talk</option>
-        <option value="battle">Battle Stadium</option>
+        <option value="main" selected>雑談</option>
+        <option value="battle">バトルスタジアム</option>
       </select>
       <br />
-      <label for="message">message</label>
-      <select name="command" id="command">
-        <option value="" selected></option>
-        <option value="/del">/del</option>
-        <option value="/speaker">/speaker</option>
-        <option value="/topic">/topic</option>
-        <option value="/clear">/clear</option>
-        <option value="/disspeaker">/disspeaker</option>
-        <option value="/manager">/manager</option>
-        <option value="/dismanager">/dismanager</option>
-        <option value="/dismoderator">/dismoderator</option>
-        <option value="/restrict">/restrict</option>
-        <option value="/release">/release</option>
-        <option value="/prohibit">/prohibit</option>
-        <option value="/kill">/kill</option>
-        <option value="/ban">/ban</option>
-        <option value="test">test</option>
-      </select>
-      <textarea
+      <label for="message">メッセージ</label>
+      
+　　　<textarea
         name="message"
         rows="6"
         cols="100"
@@ -85,7 +70,7 @@
         required
       ></textarea>
       <p></p>
-      <label for="name">name</label>
+      <label for="name">名前</label>
       <input
         type="text"
         id="name"
@@ -94,16 +79,16 @@
         maxlength="25"
         required
       />
-      <label for="seed">seed</label>
+      <label for="seed">シード</label>
       <input type="text" id="seed" name="seed" value="" required />
       <button id="submit">送信する</button>
       <br />
-     Display only messages for speakers and above<input
+      スピーカー以上のメッセージのみ表示<input
         type="checkbox"
         id="filter"
         name="verify"
       />
-      <h2>Post</h2>
+      <h2>投稿</h2>
     </form>
 
     <div id="messages"></div>
@@ -177,20 +162,20 @@
       setTimeout(reloadmessages, 1000);
       setInterval(reloadmessages, 5000);
 
-      <div class="page">
-	<!--Theme switch-->
-	<input type="checkbox" id="themeSwitch" name="theme-switch" class="theme-switch__input" />
-	<label for="themeSwitch" class="theme-switch__label">
-		<span>Switch theme</span>
-	</label>
-	
-	<!--Main page content-->
-	<main>
-		<div class="wrapper">
-		<h1>CSS Theme Switcher</h1>
-		<p>Switch from light to dark mode using the toggle.</p>
-		</div>
-	</main>
-</div>
+      darkmodeBtn.addEventListener("click", () => {
+        if (dark == 1) {
+          localStorage.setItem("dark", 0);
+          dark = 0;
+        } else {
+          localStorage.setItem("dark", 1);
+          dark = 1;
+        }
+        body.classList.toggle("dark");
+      });
+
+      if (dark == 1) {
+        body.classList.toggle("dark");
+      }
+    </script>
   </body>
 </html>
